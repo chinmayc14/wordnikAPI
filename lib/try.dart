@@ -1,4 +1,5 @@
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'main.dart';
@@ -6,6 +7,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 import 'key.dart';
+import 'package:provider/provider.dart';
+import 'package:wordnik/themechanger.dart';
 
 class trying extends StatefulWidget {
   @override
@@ -13,6 +16,7 @@ class trying extends StatefulWidget {
 }
 
 class _tryingState extends State<trying> {
+  String text = MyHomePage.word;
   List datadef;
   List dataexp;
   String API = keyy().api_key;
@@ -48,10 +52,26 @@ class _tryingState extends State<trying> {
 
   @override
   Widget build(BuildContext context) {
+    final themechanger = Provider.of<ThemeChanger>(context);
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('learn'),
+        leading: IconButton(
+          tooltip: "Back",
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Center(
+          child: Text(
+            text.toUpperCase() + '         ',
+            style: GoogleFonts.monoton(
+                textStyle: TextStyle(
+              fontSize: 22.0,
+              letterSpacing: 2.5,
+            )),
+          ),
+        ),
       ),
       body: datadef == null
           ? Center(child: Loader())
@@ -76,7 +96,7 @@ class _tryingState extends State<trying> {
                       physics: BouncingScrollPhysics(),
                       separatorBuilder: (context, index) {
                         return Divider(
-                          thickness: 5.0,
+                          thickness: themechanger.dark ? 5.0 : 2.0,
                         );
                       },
                       itemCount: 3,
@@ -85,8 +105,11 @@ class _tryingState extends State<trying> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Card(
-                              color: Colors.grey[900],
-                              elevation: 5.0,
+                              color: themechanger.dark
+                                  ? Colors.grey[900]
+                                  : Colors.grey[200],
+//
+                              elevation: 0.0,
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(
@@ -132,7 +155,7 @@ class _tryingState extends State<trying> {
                       physics: ScrollPhysics(),
                       separatorBuilder: (context, index) {
                         return Divider(
-                          thickness: 5.0,
+                          thickness: themechanger.dark ? 5.0 : 0.0,
                         );
                       },
                       itemCount: dataexp == null ? 0 : dataexp.length,
@@ -141,8 +164,10 @@ class _tryingState extends State<trying> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Card(
-                              color: Colors.grey[900],
-                              elevation: 5.0,
+                              color: themechanger.dark
+                                  ? Colors.grey[900]
+                                  : Colors.grey[200],
+                              elevation: 0.0,
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(

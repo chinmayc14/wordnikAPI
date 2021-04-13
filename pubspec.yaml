@@ -26,18 +26,22 @@ dependencies:
   http: ^0.12.0+4
   google_fonts: ^0.4.0
   flare_flutter: ^2.0.3
+  # connectivity: ^0.4.8+6
+  flare_splash_screen: ^2.0.1+2
+  intl: ^0.16.1
+  provider: ^4.0.0
+  cloud_firestore: ^1.0.4
+  firebase_core: ^1.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

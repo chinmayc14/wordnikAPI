@@ -4,6 +4,30 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter application.">
+  
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  
+  
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDaWAJx5XRyR62jGb0FsgweKBCOYBsQFjc",
+      authDomain: "wordnik-api-14.firebaseapp.com",
+      databaseURL: "https://wordnik-api-14.firebaseio.com",
+      projectId: "wordnik-api-14",
+      storageBucket: "wordnik-api-14.appspot.com",
+      messagingSenderId: "727137417275",
+      appId: "1:727137417275:web:ebe8807608340ab27e841e",
+      measurementId: "G-3JN6K47QBD"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+  </script>
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,6 +52,7 @@
       });
     }
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>

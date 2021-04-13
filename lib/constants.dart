@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const kSendButtonTextStyle = TextStyle(
@@ -24,12 +25,10 @@ const kInputDecoration = InputDecoration(
   ),
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(color: Colors.white, width: 3.0),
-    borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(32.0), topRight: Radius.circular(32.0)),
+    borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(color: Colors.white, width: 3.0),
-    borderRadius: BorderRadius.only(
-        bottomRight: Radius.circular(32.0), topLeft: Radius.circular(32.0)),
+    borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
 );
